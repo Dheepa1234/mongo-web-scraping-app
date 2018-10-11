@@ -36,10 +36,10 @@ router.get("/",function(req,res){
 
 
 //api routes
-// A GET request to scrape the echojs website
+// A GET request to scrape the  website
 router.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
-    request("http://www.npr.org/sections/world/", function(error, response, html) {
+    request("https://fivethirtyeight.com", function(error, response, html) {
         
         
           var $ = cheerio.load(html);
