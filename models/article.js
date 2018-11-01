@@ -16,24 +16,39 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  // `note` is an object that stores a Note id
+  summary: {
+    type: String,
+    default: "No Summary Available"
+  },
+  img: {
+    type: String,
+    default: "/assets/images/bar-img-unavailable.png"
+  },
+  issaved: {
+    type: Boolean,
+    default: false
+  },
+  status: {
+    type: String,
+    default: "Save Article",
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  // `notes` is an object that stores Note ids
   // The ref property links the ObjectId to the Note model
   // This allows us to populate the Article with an associated Note
-  note: {
+  notes: [{
     type: Schema.Types.ObjectId,
     ref: "Note"
-  }
+  }]
 });
+
+ArticleSchema.index({title: "text"}); //Create our key
 
 // This creates our model from the above schema, using mongoose's model method
 var Article = mongoose.model("Article", ArticleSchema);
 
 // Export the Article model
-module.exports = Article;
-
-
-// Create the Article model with the ArticleSchema
-var Article = mongoose.model("Article", ArticleSchema);
-
-// Export the model
 module.exports = Article;

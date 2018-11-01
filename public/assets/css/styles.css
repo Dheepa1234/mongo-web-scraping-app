@@ -1,0 +1,27 @@
+/*Sticky Footer*/
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  /*Add Background Texture*/
+    background-image: url('../images/digital.jpeg');
+}
+
+main {
+  flex: 1 0 auto;
+}
+.message {
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #e3f2fd ;
+	margin: auto;
+	text-align: center;
+	padding: 40px 90px;
+	color: #e3f2fd ;
+	background-color: #fff;
+}
+
+.instructions {
+	margin-left: 25px;
+}
